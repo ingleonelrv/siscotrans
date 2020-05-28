@@ -17,6 +17,7 @@ import store from "./Redux/store";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
+import Main from "./Pages/Main";
 
 import AuthRoute from "./Util/AuthRoute";
 import themeFile from "./Util/theme";
@@ -47,7 +48,7 @@ function App() {
         <BrowserRouter>
           <div className="container">
             <Switch>
-              <Route exact path="/" component={Login} />
+              <Route exact path="/" component={Main} />
               <AuthRoute exact path="/login" component={Login} />
               <AuthRoute exact path="/signup" component={Signup} />
             </Switch>
