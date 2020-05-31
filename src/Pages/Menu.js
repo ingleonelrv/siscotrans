@@ -24,6 +24,8 @@ import AssignmentIcon from "@material-ui/icons/Assignment";
 import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
 import ListIcon from "@material-ui/icons/List";
 import MeetingRoomIcon from "@material-ui/icons/MeetingRoom";
+//react router
+import { Link } from "react-router-dom";
 //components
 import Information from "../Components/Information";
 import TableLayout from "../Components/TableLayout";
@@ -78,21 +80,9 @@ const useStyles = makeStyles((theme) => ({
       width: theme.spacing(9) + 1,
     },
   },
-  toolbar: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "flex-end",
-    padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
-    ...theme.mixins.toolbar,
-  },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(3),
-  },
 }));
 
-export default function MiniDrawer() {
+export default function Menu() {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -155,7 +145,7 @@ export default function MiniDrawer() {
         </div>
         <Divider />
         <List>
-          <ListItem button>
+          <ListItem button component={Link} to="/information">
             <ListItemIcon>
               <AccountBoxIcon />
             </ListItemIcon>
@@ -164,7 +154,7 @@ export default function MiniDrawer() {
         </List>
         <Divider />
         <List>
-          <ListItem button>
+          <ListItem button component={Link} to="/control-equipment">
             <ListItemIcon>
               <LocalShippingIcon />
             </ListItemIcon>
@@ -212,7 +202,7 @@ export default function MiniDrawer() {
         </List>
         <Divider />
         <List>
-          <ListItem button>
+          <ListItem button component={Link} to="/login">
             <ListItemIcon>
               <MeetingRoomIcon />
             </ListItemIcon>
@@ -220,11 +210,11 @@ export default function MiniDrawer() {
           </ListItem>
         </List>
       </Drawer>
-      <main className={classes.content}>
+      {/* <main className={classes.content}>
         <div className={classes.toolbar} />
-        {/* <Information /> */}
+        <Information /> 
         <TableLayout />
-      </main>
+      </main> */}
     </div>
   );
 }

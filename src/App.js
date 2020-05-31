@@ -3,21 +3,21 @@ import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
+import { makeStyles } from "@material-ui/core/styles";
 import jwtDecode from "jwt-decode";
 
 //Redux
 import { Provider } from "react-redux";
-import store from "./Redux/store";
+// import store from "./Redux/store";
 // import { SET_AUTHENTICATED } from "./redux/types";
 // import { logoutUser, getUserData } from "./redux/actions/userActions";
 
-//Components
-// import Navbar from "./components/layout/Navbar";
 //Pages
-import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
-import Main from "./Pages/Main";
+import Main from "./Pages/Menu";
+import Information from "./Components/Information";
+import ControlEquipment from "./Components/TableLayout"; //change to container
 
 import AuthRoute from "./Util/AuthRoute";
 import themeFile from "./Util/theme";
@@ -41,20 +41,43 @@ axios.defaults.baseURL =
 // }
 
 const theme = createMuiTheme(themeFile);
+const useStyles = makeStyles((theme) => ({
+  toolbar: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "flex-end",
+    padding: theme.spacing(0, 1),
+    // necessary for content to be below app bar
+    ...theme.mixins.toolbar,
+  },
+  content: {
+    flexGrow: 1,
+    padding: theme.spacing(3),
+  },
+}));
 function App() {
+  const classes = useStyles();
   return (
     <MuiThemeProvider theme={theme}>
-      <Provider store={store}>
-        <BrowserRouter>
-          <div className="container">
-            <Switch>
-              <Route exact path="/" component={Main} />
-              <AuthRoute exact path="/login" component={Login} />
-              <AuthRoute exact path="/signup" component={Signup} />
-            </Switch>
-          </div>
-        </BrowserRouter>
-      </Provider>
+      {/* <Provider store={store}> */}
+      <BrowserRouter>
+        <Main />
+        <main className={classes.content}>
+          <div className={classes.toolbar} />
+          <Switch>
+            <Route exact path="/" component={Information} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/information" component={Information} />
+            <Route
+              exact
+              path="/control-equipment"
+              component={ControlEquipment}
+            />
+          </Switch>
+        </main>
+      </BrowserRouter>
+      {/* </Provider> */}
     </MuiThemeProvider>
   );
 }
