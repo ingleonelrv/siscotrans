@@ -26,9 +26,6 @@ import ListIcon from "@material-ui/icons/List";
 import MeetingRoomIcon from "@material-ui/icons/MeetingRoom";
 //react router
 import { Link } from "react-router-dom";
-//components
-import Information from "../Components/Information";
-import TableLayout from "../Components/TableLayout";
 
 const drawerWidth = 270;
 
@@ -154,7 +151,7 @@ export default function Menu() {
         </List>
         <Divider />
         <List>
-          <ListItem button component={Link} to="/control-equipment">
+          <ListItem button component={Link} to="/equipment-control">
             <ListItemIcon>
               <LocalShippingIcon />
             </ListItemIcon>

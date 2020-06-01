@@ -17,7 +17,7 @@ import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
 import Main from "./Pages/Menu";
 import Information from "./Components/Information";
-import ControlEquipment from "./Components/TableLayout"; //change to container
+import EquipmentContainer from "./Containers/EquipmentContainer"; //change to container
 
 import AuthRoute from "./Util/AuthRoute";
 import themeFile from "./Util/theme";
@@ -71,8 +71,8 @@ function App() {
             <Route exact path="/information" component={Information} />
             <Route
               exact
-              path="/control-equipment"
-              component={ControlEquipment}
+              path="/equipment-control"
+              component={EquipmentContainer}
             />
           </Switch>
         </main>

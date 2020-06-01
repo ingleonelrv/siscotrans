@@ -10,7 +10,7 @@ import AddIcon from "@material-ui/icons/Add";
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    border: "1px solid red",
+    // border: "1px solid red",
   },
   title: {
     textAlign: "center",
@@ -25,12 +25,12 @@ export default function TableLayout(props) {
   return (
     <Container className={classes.container} maxWidth="lg">
       <Typography className={classes.title} variant="h5" gutterBottom>
-        Titulo de la tabla
+        {props.title}
       </Typography>
       <Divider />
       {props.children}
       <div className={classes.buttonAdd}>
-        <Fab color="primary" aria-label="add">
+        <Fab color="primary" aria-label="add" onClick={props.buttonAddAction}>
           <AddIcon />
         </Fab>
       </div>
