@@ -17,7 +17,8 @@ import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
 import Main from "./Pages/Menu";
 import Information from "./Components/Information";
-import EquipmentContainer from "./Containers/EquipmentContainer"; //change to container
+import EquipmentListContainer from "./Containers/EquipmentListContainer"; //change to container
+import EquipmentControlContainer from "./Containers/EquipmentControlContainer"; //change to container
 
 import AuthRoute from "./Util/AuthRoute";
 import themeFile from "./Util/theme";
@@ -71,8 +72,13 @@ function App() {
             <Route exact path="/information" component={Information} />
             <Route
               exact
-              path="/equipment-control"
-              component={EquipmentContainer}
+              path="/equipment-list"
+              component={EquipmentListContainer}
+            />
+            <Route
+              exact
+              path="/equipment-list/equipment"
+              component={EquipmentControlContainer}
             />
           </Switch>
         </main>

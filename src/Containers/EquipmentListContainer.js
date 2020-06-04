@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import TableLayout from "../Components/TableLayout";
 import EquipmentList from "../Components/EquipmentList";
 
-export class EquipmentContainer extends Component {
+export class EquipmentListContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -28,4 +28,4 @@ export class EquipmentContainer extends Component {
   }
 }
 
-export default EquipmentContainer;
+export default EquipmentListContainer;

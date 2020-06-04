@@ -151,13 +151,13 @@ export default function Menu() {
         </List>
         <Divider />
         <List>
-          <ListItem button component={Link} to="/equipment-control">
+          <ListItem button component={Link} to="/equipment-list">
             <ListItemIcon>
               <LocalShippingIcon />
             </ListItemIcon>
             <ListItemText primary="Control de Equipos" />
           </ListItem>
-          <ListItem button>
+          <ListItem button component={Link} to="/equipment-list/equipment">
             <ListItemIcon>
               <PeopleAltIcon />
             </ListItemIcon>
