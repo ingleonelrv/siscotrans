@@ -9,6 +9,8 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 //components
 import EquipmentData from "../Components/EquipmentData";
+import TableLayout from "../Components/TableLayout";
+import JourneyList from "../Components/JourneyList";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -53,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SimpleTabs(props) {
+export default function EquipmentLayout(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -84,7 +86,9 @@ export default function SimpleTabs(props) {
         <EquipmentData />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Viajes
+        <TableLayout buttonAddAction={props.buttonAddAction}>
+          <JourneyList rowAction={props.journeyRow} />
+        </TableLayout>
       </TabPanel>
       <TabPanel value={value} index={2}>
         Gastos de Mantenimiento

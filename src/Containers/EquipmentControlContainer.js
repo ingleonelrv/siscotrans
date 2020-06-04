@@ -12,11 +12,17 @@ export class EquipmentControlContainer extends Component {
   buttonAddAction = () => {
     alert("Button add");
   };
-  rowAction = (plate) => {
-    alert(`Row key ${plate}`);
+  journeyRow = (journey) => {
+    alert(`Journey number ${journey}`);
   };
   render() {
-    return <EquipmentLayout title={this.state.title}></EquipmentLayout>;
+    return (
+      <EquipmentLayout
+        title={this.state.title}
+        journeyRow={this.journeyRow}
+        buttonAddAction={this.buttonAddAction}
+      ></EquipmentLayout>
+    );
   }
 }
 

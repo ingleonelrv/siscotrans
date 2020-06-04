@@ -65,7 +65,7 @@ const rows = [
   ),
 ];
 
-export default function SimpleTable(props) {
+export default function EquipmentList(props) {
   const classes = useStyles();
 
   return (
