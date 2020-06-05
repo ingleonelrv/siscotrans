@@ -87,12 +87,12 @@ export default function EquipmentLayout(props) {
         <EquipmentData />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <TableLayout buttonAddAction={props.buttonAddAction}>
+        <TableLayout buttonAddAction={props.buttonAddJourney}>
           <JourneyList rowAction={props.journeyRow} />
         </TableLayout>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <TableLayout buttonAddAction={props.buttonAddAction}>
+        <TableLayout buttonAddAction={props.buttonAddExpense}>
           <EquipmentExpenses />
         </TableLayout>
       </TabPanel>

@@ -2,28 +2,36 @@ import React, { Component } from "react";
 //component
 import EquipmentLayout from "../Components/EquipmentLayout";
 import JourneyData from "../Components/JourneyData";
+import EquipmentExpenseData from "../Components/EquipmentExpenseData";
 
 export class EquipmentControlContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       title: "Equipo",
-      open: false,
+      openJourney: false,
+      openExpense: false,
     };
   }
 
-  handleOpenDialog = () => {
-    this.setState({ open: true });
+  handleOpenJourney = () => {
+    this.setState({ openJourney: true });
   };
 
-  handleCloseDialog = () => {
-    this.setState({ open: false });
+  handleCloseJourney = () => {
+    this.setState({ openJourney: false });
   };
-  buttonAddAction = () => {
-    this.setState({ open: true });
+  handleCloseExpense = () => {
+    this.setState({ openExpense: false });
+  };
+  buttonAddActionJourney = () => {
+    this.setState({ openJourney: true });
+  };
+  buttonAddActionExpense = () => {
+    this.setState({ openExpense: true });
   };
   journeyRow = (journey) => {
-    this.setState({ open: true });
+    this.setState({ openJourney: true });
   };
   render() {
     return (
@@ -31,11 +39,16 @@ export class EquipmentControlContainer extends Component {
         <EquipmentLayout
           title={this.state.title}
           journeyRow={this.journeyRow}
-          buttonAddAction={this.buttonAddAction}
+          buttonAddJourney={this.buttonAddActionJourney}
+          buttonAddExpense={this.buttonAddActionExpense}
         />
         <JourneyData
-          handleClose={this.handleCloseDialog}
-          open={this.state.open}
+          handleClose={this.handleCloseJourney}
+          open={this.state.openJourney}
+        />
+        <EquipmentExpenseData
+          handleClose={this.handleCloseExpense}
+          open={this.state.openExpense}
         />
       </div>
     );
