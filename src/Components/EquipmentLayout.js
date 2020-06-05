@@ -11,7 +11,8 @@ import Box from "@material-ui/core/Box";
 import EquipmentData from "../Components/EquipmentData";
 import TableLayout from "../Components/TableLayout";
 import JourneyList from "../Components/JourneyList";
-import EquipmentExpenses from "../Components/EquipmentExpenses";
+import EquipmentExpensesList from "./EquipmentExpensesList";
+import EquipmentMaintenanceList from "./EquipmentMaintenanceList";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -93,11 +94,13 @@ export default function EquipmentLayout(props) {
       </TabPanel>
       <TabPanel value={value} index={2}>
         <TableLayout buttonAddAction={props.buttonAddExpense}>
-          <EquipmentExpenses />
+          <EquipmentExpensesList />
         </TableLayout>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        Mantenimientos comunes
+        <TableLayout buttonAddAction={props.buttonAddMaintenance}>
+          <EquipmentMaintenanceList />
+        </TableLayout>
       </TabPanel>
       <TabPanel value={value} index={4}>
         Gasto de Combustible
