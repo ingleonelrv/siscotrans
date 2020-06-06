@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 //component
-import EquipmentLayout from "../Components/EquipmentLayout";
-import JourneyData from "../Components/JourneyData";
-import EquipmentExpenseData from "../Components/EquipmentExpenseData";
-import EquipmentMaintenanceData from "../Components/EquipmentMaintenanceData";
-import FuelExpensesData from "../Components/FuelExpensesData";
+import EquipmentLayout from "../Components/Equipments/EquipmentLayout";
+import JourneyData from "../Components/Equipments/JourneyData";
+import EquipmentExpenseData from "../Components/Equipments/EquipmentExpenseData";
+import EquipmentMaintenanceData from "../Components/Equipments/EquipmentMaintenanceData";
+import FuelExpensesData from "../Components/Equipments/FuelExpensesData";
 
 export class EquipmentControlContainer extends Component {
   constructor(props) {

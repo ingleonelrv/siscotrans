@@ -8,9 +8,9 @@ import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 //components
-import EquipmentData from "../Components/EquipmentData";
-import TableLayout from "../Components/TableLayout";
-import JourneyList from "../Components/JourneyList";
+import EquipmentData from "./EquipmentData";
+import TableLayout from "../TableLayout";
+import JourneyList from "./JourneyList";
 import EquipmentExpensesList from "./EquipmentExpensesList";
 import EquipmentMaintenanceList from "./EquipmentMaintenanceList";
 import FuelExpensesList from "./FuelExpensesList";

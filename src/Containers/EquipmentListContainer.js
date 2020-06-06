@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 //component
 import TableLayout from "../Components/TableLayout";
-import EquipmentList from "../Components/EquipmentList";
+import EquipmentList from "../Components/Equipments/EquipmentList";
 
 export class EquipmentListContainer extends Component {
   constructor(props) {
