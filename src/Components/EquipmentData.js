@@ -6,6 +6,10 @@ import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
 import Divider from "@material-ui/core/Divider";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
+import InputLabel from "@material-ui/core/InputLabel";
+import MenuItem from "@material-ui/core/MenuItem";
 import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
@@ -38,9 +42,13 @@ export default function EquipmentData() {
   const classes = useStyles();
   // The first commit of Material-UI
   const [selectedDate, setSelectedDate] = React.useState(new Date());
+  const [age, setAge] = React.useState("");
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
+  };
+  const handleChangeOwner = (event) => {
+    setAge(event.target.value);
   };
   return (
     <Container maxWidth="sm">
@@ -148,6 +156,35 @@ export default function EquipmentData() {
                 "aria-label": "change date",
               }}
             />
+            <FormControl className={classes.inputs}>
+              <InputLabel id="demo-simple-select-label">Propiedad</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={age}
+                onChange={handleChangeOwner}
+              >
+                <MenuItem value={10}>Propio</MenuItem>
+                <MenuItem value={20}>Subcontratado</MenuItem>
+              </Select>
+            </FormControl>
+            <FormControl className={classes.inputs}>
+              <InputLabel id="demo-simple-select-label">Asignacion</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={age}
+                onChange={handleChangeOwner}
+              >
+                <MenuItem value={10}>Seaboard</MenuItem>
+                <MenuItem value={20}>Crowley</MenuItem>
+                <MenuItem value={30}>Maersk</MenuItem>
+                <MenuItem value={30}>Hapag Lloyd</MenuItem>
+                <MenuItem value={30}>Furgon</MenuItem>
+                <MenuItem value={30}>Rastra</MenuItem>
+                <MenuItem value={30}>Cisterna</MenuItem>
+              </Select>
+            </FormControl>
           </MuiPickersUtilsProvider>
           <br />
           <Button
