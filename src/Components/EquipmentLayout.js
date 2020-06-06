@@ -13,6 +13,8 @@ import TableLayout from "../Components/TableLayout";
 import JourneyList from "../Components/JourneyList";
 import EquipmentExpensesList from "./EquipmentExpensesList";
 import EquipmentMaintenanceList from "./EquipmentMaintenanceList";
+import FuelExpensesList from "./FuelExpensesList";
+import EquipmentTools from "./EquipmentTools";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -103,10 +105,12 @@ export default function EquipmentLayout(props) {
         </TableLayout>
       </TabPanel>
       <TabPanel value={value} index={4}>
-        Gasto de Combustible
+        <TableLayout buttonAddAction={props.buttonAddFuel}>
+          <FuelExpensesList />
+        </TableLayout>
       </TabPanel>
       <TabPanel value={value} index={5}>
-        Herramientas
+        <EquipmentTools />
       </TabPanel>
     </Container>
   );

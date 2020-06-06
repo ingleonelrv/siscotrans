@@ -4,6 +4,7 @@ import EquipmentLayout from "../Components/EquipmentLayout";
 import JourneyData from "../Components/JourneyData";
 import EquipmentExpenseData from "../Components/EquipmentExpenseData";
 import EquipmentMaintenanceData from "../Components/EquipmentMaintenanceData";
+import FuelExpensesData from "../Components/FuelExpensesData";
 
 export class EquipmentControlContainer extends Component {
   constructor(props) {
@@ -13,8 +14,10 @@ export class EquipmentControlContainer extends Component {
       openJourney: false,
       openExpense: false,
       openMaintenance: false,
+      openFuelExp: false,
     };
   }
+  //CLOSE THE DIALOG WINDOWS
   handleCloseJourney = () => {
     this.setState({ openJourney: false });
   };
@@ -24,6 +27,10 @@ export class EquipmentControlContainer extends Component {
   handleCloseMaintenance = () => {
     this.setState({ openMaintenance: false });
   };
+  handleCloseFuelExp = () => {
+    this.setState({ openFuelExp: false });
+  };
+  //OPEN THE WINDOWS FOR ADDING DATA
   buttonAddActionJourney = () => {
     this.setState({ openJourney: true });
   };
@@ -32,6 +39,9 @@ export class EquipmentControlContainer extends Component {
   };
   buttonAddMaintenance = () => {
     this.setState({ openMaintenance: true });
+  };
+  buttonAddFuelExp = () => {
+    this.setState({ openFuelExp: true });
   };
   journeyRow = (journey) => {
     this.setState({ openJourney: true });
@@ -45,6 +55,7 @@ export class EquipmentControlContainer extends Component {
           buttonAddJourney={this.buttonAddActionJourney}
           buttonAddExpense={this.buttonAddActionExpense}
           buttonAddMaintenance={this.buttonAddMaintenance}
+          buttonAddFuel={this.buttonAddFuelExp}
         />
         <JourneyData
           handleClose={this.handleCloseJourney}
@@ -57,6 +68,10 @@ export class EquipmentControlContainer extends Component {
         <EquipmentMaintenanceData
           handleClose={this.handleCloseMaintenance}
           open={this.state.openMaintenance}
+        />
+        <FuelExpensesData
+          handleClose={this.handleCloseFuelExp}
+          open={this.state.openFuelExp}
         />
       </div>
     );
