@@ -157,7 +157,7 @@ export default function Menu() {
             </ListItemIcon>
             <ListItemText primary="Control de Equipos" />
           </ListItem>
-          <ListItem button component={Link} to="/equipment-list/equipment">
+          <ListItem button component={Link} to="/driver-list">
             <ListItemIcon>
               <PeopleAltIcon />
             </ListItemIcon>
