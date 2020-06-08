@@ -172,7 +172,7 @@ export default function Menu() {
             </ListItemIcon>
             <ListItemText primary="Status de Flota" />
           </ListItem>
-          <ListItem button>
+          <ListItem button component={Link} to="/adminExp-list">
             <ListItemIcon>
               <MonetizationOnIcon />
             </ListItemIcon>

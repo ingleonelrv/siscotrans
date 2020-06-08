@@ -20,6 +20,7 @@ import Information from "./Components/Information";
 import EquipmentListContainer from "./Containers/EquipmentListContainer"; //change to container
 import EquipmentControlContainer from "./Containers/EquipmentControlContainer"; //change to container
 import DriverListContainer from "./Containers/DriverListContainer"; //change to container
+import AdminExpListContainer from "./Containers/AdminExpListContainer"; //change to container
 
 import AuthRoute from "./Util/AuthRoute";
 import themeFile from "./Util/theme";
@@ -82,6 +83,11 @@ function App() {
               component={EquipmentControlContainer}
             />
             <Route exact path="/driver-list" component={DriverListContainer} />
+            <Route
+              exact
+              path="/adminExp-list"
+              component={AdminExpListContainer}
+            />
           </Switch>
         </main>
       </BrowserRouter>
