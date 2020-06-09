@@ -44,7 +44,7 @@ function subtotal(spent) {
 }
 
 const rows = [
-  createData("M262082", 1, [
+  createData("Roberto Blanco", "M262082", [
     {
       date: "2020-01-05",
       type: "Mecanico",
@@ -60,7 +60,7 @@ const rows = [
       price: 40,
     },
   ]),
-  createData("M262082", 2, [
+  createData("Luis Carlos Rugama", "M144229", [
     {
       date: "2020-01-05",
       type: "Mecanico",
@@ -151,15 +151,15 @@ function Row(props) {
     </React.Fragment>
   );
 }
-export default function EquipmentExpenses() {
+export default function DriverExpList() {
   return (
     <TableContainer component={Paper}>
       <Table aria-label="collapsible table">
         <TableHead>
           <TableRow>
             <TableCell />
+            <TableCell>Conductor</TableCell>
             <TableCell>Equipo</TableCell>
-            <TableCell>Viaje</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

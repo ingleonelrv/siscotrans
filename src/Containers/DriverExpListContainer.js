@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 //component
 import TableLayout from "../Components/TableLayout";
-import EquipmentExpList from "../Components/Finance/EquipmentExpList";
-// import EquipmentExpData from "../Components/Finance/EquipmentExpData";
-import EquipmentExpenseData from "../Components/Equipments/EquipmentExpenseData";
+import DriverExpList from "../Components/Finance/DriverExpList";
+import DriverExpData from "../Components/Finance/DriverExpData";
 
-export class EquipmentExpListContainer extends Component {
+export class DriverExpListContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -28,8 +27,8 @@ export class EquipmentExpListContainer extends Component {
         title={this.state.title}
         buttonAddAction={this.buttonAddAction}
       >
-        <EquipmentExpList rowAction={this.rowAction} />
-        <EquipmentExpenseData
+        <DriverExpList rowAction={this.rowAction} />
+        <DriverExpData
           handleClose={this.handleCloseNewAdminExp}
           open={this.state.openNewAdminExp}
         />
@@ -38,4 +37,4 @@ export class EquipmentExpListContainer extends Component {
   }
 }
 
-export default EquipmentExpListContainer;
+export default DriverExpListContainer;
