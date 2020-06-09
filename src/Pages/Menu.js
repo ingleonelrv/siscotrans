@@ -178,7 +178,7 @@ export default function Menu() {
             </ListItemIcon>
             <ListItemText primary="Gastos de Administracion" />
           </ListItem>
-          <ListItem button>
+          <ListItem button component={Link} to="/equipmentExp-list">
             <ListItemIcon>
               <MonetizationOnIcon />
             </ListItemIcon>
