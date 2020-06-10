@@ -22,6 +22,7 @@ import EquipmentControlContainer from "./Containers/EquipmentControlContainer"; 
 import DriverListContainer from "./Containers/DriverListContainer"; //change to container
 import AdminExpListContainer from "./Containers/AdminExpListContainer"; //change to container
 import DriverExpListContainer from "./Containers/DriverExpListContainer"; //change to container
+import InventoryListContainer from "./Containers/InventoryListContainer"; //change to container
 
 import AuthRoute from "./Util/AuthRoute";
 import themeFile from "./Util/theme";
@@ -93,6 +94,11 @@ function App() {
               exact
               path="/driverExp-list"
               component={DriverExpListContainer}
+            />
+            <Route
+              exact
+              path="/inventory-list"
+              component={InventoryListContainer}
             />
           </Switch>
         </main>

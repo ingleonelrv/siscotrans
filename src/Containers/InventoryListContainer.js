@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 //component
 import TableLayout from "../Components/TableLayout";
-import DriverExpList from "../Components/Finance/DriverExpList";
-import DriverExpData from "../Components/Finance/DriverExpData";
+import InventoryList from "../Components/Finance/InventoryList";
+import InventoryData from "../Components/Finance/InventoryData";
 
-export class DriverExpListContainer extends Component {
+export class InventoryListContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "Gastos de Conductores",
+      title: "Inventario de Repuestos",
       openNewAdminExp: false,
     };
   }
@@ -27,8 +27,8 @@ export class DriverExpListContainer extends Component {
         title={this.state.title}
         buttonAddAction={this.buttonAddAction}
       >
-        <DriverExpList rowAction={this.rowAction} />
-        <DriverExpData
+        <InventoryList rowAction={this.rowAction} />
+        <InventoryData
           handleClose={this.handleCloseNewAdminExp}
           open={this.state.openNewAdminExp}
         />
@@ -37,4 +37,4 @@ export class DriverExpListContainer extends Component {
   }
 }
 
-export default DriverExpListContainer;
+export default InventoryListContainer;

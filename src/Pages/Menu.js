@@ -184,7 +184,7 @@ export default function Menu() {
             </ListItemIcon>
             <ListItemText primary="Gastos de Conductores" />
           </ListItem>
-          <ListItem button>
+          <ListItem button component={Link} to="/inventory-list">
             <ListItemIcon>
               <ListIcon />
             </ListItemIcon>
