@@ -176,9 +176,10 @@ export default function DriverData(props) {
                   value={age}
                   onChange={handleChange}
                 >
-                  <MenuItem value={1}>Contratado</MenuItem>
-                  <MenuItem value={2}>Despedido</MenuItem>
-                  <MenuItem value={3}>Renuncio</MenuItem>
+                  <MenuItem value={1}>Contratado con camion</MenuItem>
+                  <MenuItem value={2}>Contratado sin camion</MenuItem>
+                  <MenuItem value={3}>Despedido</MenuItem>
+                  <MenuItem value={4}>Renuncio</MenuItem>
                 </Select>
               </FormControl>
               {/* if 'contratado' dinamic texfield */}

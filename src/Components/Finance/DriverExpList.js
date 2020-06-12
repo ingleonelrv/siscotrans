@@ -26,10 +26,10 @@ const useRowStyles = makeStyles({
   },
 });
 
-function createData(equipment, journey, expenses) {
+function createData(driver, equipment, expenses) {
   return {
+    driver,
     equipment,
-    journey,
     expenses,
   };
 }
@@ -40,40 +40,40 @@ function ccyFormat(num) {
 
 function subtotal(spent) {
   console.log(spent);
-  return spent.map(({ price }) => price).reduce((sum, i) => sum + i, 0);
+  return spent.map(({ amount }) => amount).reduce((sum, i) => sum + i, 0);
 }
 
 const rows = [
   createData("Roberto Blanco", "M262082", [
     {
       date: "2020-01-05",
-      type: "Mecanico",
-      placePerson: "Payin",
-      description: "Cambio de aceite",
-      price: 6,
+      journey: 1,
+      type: "Viaticos",
+      description: "NA",
+      amount: 170,
     },
     {
-      date: "2020-01-02",
-      type: "Repuesto",
-      placePerson: "RESA",
-      description: "Filtros",
-      price: 40,
+      date: "2020-01-15",
+      journey: 1,
+      type: "Pago",
+      description: "NA",
+      amount: 150,
     },
   ]),
   createData("Luis Carlos Rugama", "M144229", [
     {
-      date: "2020-01-05",
-      type: "Mecanico",
-      placePerson: "Payin",
-      description: "Cambio de fricciones",
-      price: 800,
+      date: "2020-01-07",
+      journey: 1,
+      type: "Viaticos",
+      description: "NA",
+      amount: 170,
     },
     {
-      date: "2020-01-02",
-      type: "Repuesto",
-      placePerson: "RESA",
-      description: "Rash",
-      price: 800,
+      date: "2020-01-17",
+      journey: 1,
+      type: "Pago",
+      description: "NA",
+      amount: 150,
     },
   ]),
 ];
@@ -95,9 +95,9 @@ function Row(props) {
           </IconButton>
         </TableCell>
         <TableCell component="th" scope="row">
-          {row.equipment}
+          {row.driver}
         </TableCell>
-        <TableCell>{row.journey}</TableCell>
+        <TableCell>{row.equipment}</TableCell>
       </TableRow>
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
@@ -111,8 +111,8 @@ function Row(props) {
                 <TableHead>
                   <TableRow>
                     <TableCell>Fecha</TableCell>
-                    <TableCell align="right">Tipo</TableCell>
-                    <TableCell align="right">Lugar/Persona</TableCell>
+                    <TableCell align="right">Viaje</TableCell>
+                    <TableCell align="right">Tipo de Gasto</TableCell>
                     <TableCell align="right">Descripcion</TableCell>
                     <TableCell align="right">Monto</TableCell>
                   </TableRow>
@@ -125,11 +125,11 @@ function Row(props) {
                       key={spent.date}
                     >
                       <TableCell>{spent.date}</TableCell>
+                      <TableCell align="right">{spent.journey}</TableCell>
                       <TableCell align="right">{spent.type}</TableCell>
-                      <TableCell align="right">{spent.placePerson}</TableCell>
                       <TableCell align="right">{spent.description}</TableCell>
                       <TableCell align="right">
-                        {ccyFormat(spent.price)}
+                        {ccyFormat(spent.amount)}
                       </TableCell>
                     </TableRow>
                   ))}

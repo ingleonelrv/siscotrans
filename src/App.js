@@ -13,7 +13,7 @@ import { Provider } from "react-redux";
 // import { logoutUser, getUserData } from "./redux/actions/userActions";
 
 //Pages
-import Login from "./Pages/Login";
+import Login from "./Pages/LoginUI";
 import Signup from "./Pages/Signup";
 import Main from "./Pages/Menu";
 import Information from "./Components/Information";
@@ -70,7 +70,7 @@ function App() {
         <main className={classes.content}>
           <div className={classes.toolbar} />
           <Switch>
-            <Route exact path="/" component={Information} />
+            <Route exact path="/" component={Login} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/information" component={Information} />

@@ -157,6 +157,18 @@ export default function EquipmentData() {
               }}
             />
             <FormControl className={classes.inputs}>
+              <InputLabel id="demo-simple-select-label">Piloto</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={age}
+                onChange={handleChangeOwner}
+              >
+                <MenuItem value={10}>Juan Jose Moncada</MenuItem>
+                <MenuItem value={20}>Roberto Jose Blanco</MenuItem>
+              </Select>
+            </FormControl>
+            <FormControl className={classes.inputs}>
               <InputLabel id="demo-simple-select-label">Propiedad</InputLabel>
               <Select
                 labelId="demo-simple-select-label"

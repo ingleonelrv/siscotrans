@@ -74,7 +74,7 @@ export default function JourneyData(props) {
                 "aria-label": "change date",
               }}
             />
-            <TextField
+            {/* <TextField
               className={classes.inputs}
               id="standard-read-only-input"
               label="Dias"
@@ -82,7 +82,7 @@ export default function JourneyData(props) {
               InputProps={{
                 readOnly: true,
               }}
-            />
+            /> */}
             <Paper className={classes.paper}>
               <TextField
                 className={classes.inputs}
